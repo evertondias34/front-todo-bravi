@@ -1,0 +1,31 @@
+.toolbar {
+  height: 60px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.title {
+  margin-top: 0.5em;
+}
+
+.styleDivContent {
+  min-width: 100%;
+  margin: 0.1em;
+}
+
+.styleTitle {
+  color: #e8860b;
+}

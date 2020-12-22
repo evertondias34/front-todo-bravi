@@ -1,0 +1,56 @@
+<div class="col-sm-14">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="widthToolbar">Cadastrar Tarefa</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div class="container">
+  <mat-card class="col-12" *ngIf="cadastro">
+    <form
+      autocomplete="off"
+      novalidate
+      [formGroup]="cadastro"
+      (ngSubmit)="submit()"
+    >
+      <mat-card-content>
+        <bravi-input-text
+          titulo="Título *"
+          controlName="titulo"
+          [formGroup]="cadastro"
+        ></bravi-input-text>
+        <bravi-input-text
+          titulo="Descrição"
+          controlName="descricao"
+          [formGroup]="cadastro"
+        ></bravi-input-text>
+        <div>
+          <bravi-input-date
+            [disabled]="!cadastro.controls.isAtivo.value"
+            titulo="Data Agendamento"
+            controlName="dataPrevista"
+            [formGroup]="cadastro"
+          ></bravi-input-date>
+        </div>
+
+        <bravi-input-number
+          titulo="Tempo gasto(hs)"
+          controlName="tempoGasto"
+          step="0.5"
+          [formGroup]="cadastro"
+        ></bravi-input-number>
+      </mat-card-content>
+      <mat-card-actions class="centralizar">
+        <button color="warn" mat-raised-button (click)="cancelar()" class="btn">
+          Cancelar
+        </button>
+        <button type="submit" color="primary" mat-raised-button class="btn">
+          Salvar
+        </button>
+      </mat-card-actions>
+
+      <div class="minhaclase"></div>
+    </form>
+  </mat-card>
+</div>

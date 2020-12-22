@@ -1,0 +1,45 @@
+.styleFilter {
+  margin-left: auto;
+  display: block;
+  align-items: baseline;
+  padding-top: 1em;
+}
+
+.styleRadioButton {
+  padding-left: 1em;
+}
+
+.colorAdd {
+  background-color: #0deded;
+}
+
+.styleDivCard {
+  display: flex;
+}
+
+.displayFlex {
+  display: inline-flex !important;
+}
+
+.buttonCard {
+  width: 100%;
+  text-align: left;
+  cursor: zoom-in !important;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.styleDivTarefas {
+  width: 20em;
+}
+
+.styleCards {
+  padding-bottom: 0.5em;
+}
+
+.styleSubtitleCards {
+  height: 4em;
+}

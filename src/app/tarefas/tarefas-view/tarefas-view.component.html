@@ -1,0 +1,123 @@
+<div class="col-sm-14">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="widthToolbar">Minhas Tarefas </span>
+      <div class="spacer"></div>
+      <button class="colorAdd btn" mat-icon-button (click)="adicionarTarefa()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div class="container">
+  <div class="form-group styleFilter centralizar">
+    <div id="statusTarefa">
+      <mat-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="statusTarefa"
+        [(ngModel)]="statusSelected"
+      >
+        <mat-radio-button
+          (click)="filtrarByStatus(status)"
+          class="statusTarefa styleRadioButton"
+          *ngFor="let status of statusTarefa"
+          [value]="status"
+        >
+          {{ status }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div
+        *ngFor="let tarefa of tarefasFiltradas"
+        class="col-sm-4 col-12 styleCards"
+      >
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ tarefa.titulo }} </mat-card-title>
+            <mat-card-subtitle class="styleSubtitleCards"
+              >{{ tarefa.descricao }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div>
+              <label *ngIf="tarefa.isAtivo"
+                >Realização prevista para: <b>{{ tarefa.data }}</b></label
+              >
+            </div>
+            <div>
+              <label *ngIf="!tarefa.isAtivo && tarefa.tempoGasto"
+                >Horas gastas: <b>{{ tarefa.tempoGasto }}</b></label
+              >
+            </div>
+            <mat-expansion-panel
+              disabled="{{ tarefa.comentarios.length == 0 }}"
+            >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <label>Comentários</label>
+                </mat-panel-title>
+                <mat-panel-description>
+                  {{ tarefa.comentarios ? tarefa.comentarios.length : "0" }}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div *ngFor="let comentario of tarefa.comentarios">
+                <p>{{ comentario.descricao }}</p>
+              </div>
+            </mat-expansion-panel>
+          </mat-card-content>
+          <mat-card-actions class="centralizar">
+            <button
+              mat-icon-button
+              color="warn"
+              class="btn"
+              disabled="{{ !tarefa.isAtivo }}"
+              (click)="adicionarComentario(tarefa)"
+              #tooltip="matTooltip"
+              matTooltip="Adicionar comentário"
+            >
+              <mat-icon>add_circle</mat-icon>
+            </button>
+
+            <button
+              disabled="{{ !tarefa.isAtivo }}"
+              mat-icon-button
+              class="btn green"
+              (click)="concluirTarefa(tarefa)"
+              #tooltip="matTooltip"
+              matTooltip="Concluir tarefa"
+            >
+              <mat-icon>check_circle</mat-icon>
+            </button>
+
+            <button
+              mat-icon-button
+              color="primary"
+              class="btn"
+              (click)="editarTarefa(tarefa.id)"
+              #tooltip="matTooltip"
+              matTooltip="Editar tarefa"
+            >
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button
+              mat-icon-button
+              color="warn"
+              class="btn"
+              (click)="deletarTarefa(tarefa.id)"
+              #tooltip="matTooltip"
+              matTooltip="Deletar tarefa"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

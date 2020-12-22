@@ -1,0 +1,28 @@
+<div class="styleModal">
+  <h1 mat-dialog-title>{{ dados.titulo }}</h1>
+  <div mat-dialog-content>
+    <div>
+      <form autocomplete="off" novalidate [formGroup]="cadastro">
+        <bravi-input-text
+          titulo="Comentário"
+          controlName="descricao"
+          [formGroup]="cadastro"
+        ></bravi-input-text>
+      </form>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button
+      [disabled]="!this.cadastro.valid"
+      mat-raised-button
+      class="btn btn-primary"
+      cdkFocusInitial
+      [mat-dialog-close]="cadastro.controls.descricao.value"
+    >
+      Salvar
+    </button>
+    <button mat-raised-button class="btn btn-danger" [mat-dialog-close]="false">
+      Cancelar
+    </button>
+  </div>
+</div>
