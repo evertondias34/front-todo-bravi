@@ -1,24 +1,22 @@
 # Angular TO DO 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
+Este projeto foi construído com [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
 
 ## Clonar projeto
 
-Cria uma pasta 
+Cria uma pasta em sua área de desenvolvimento, abra-a no terminal e execute o comando: `git clone git@github.com:evertondias34/front-todo-bravi.git`
 
-## Development server
+## Instalar as dependências
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Abra o terminal e execute o comando: `npm install`
 
-## Code scaffolding
+## Executar a aplicação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+No terminal execute o comando: `ng serve` e acesse a aplicação em: `http://localhost:4200/`. 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+No terminal execute `ng build` para build o projeto. O `build artifacts` serão armazenados no diretório `dist/` directory. Use `--prod` para um build de produção.
 
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
