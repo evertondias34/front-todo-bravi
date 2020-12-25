@@ -11,18 +11,22 @@
       </form>
     </div>
   </div>
-  <div mat-dialog-actions>
+  <div mat-dialog-actions class="centralizar">
+    <button
+      mat-raised-button
+      color="warn"
+      class="btn"
+      [mat-dialog-close]="false"
+    >
+      Cancelar
+    </button>
     <button
       [disabled]="!this.cadastro.valid"
       mat-raised-button
-      class="btn btn-primary"
-      cdkFocusInitial
+      class="btn colorButtonConfirm"
       [mat-dialog-close]="cadastro.controls.descricao.value"
     >
       Salvar
-    </button>
-    <button mat-raised-button class="btn btn-danger" [mat-dialog-close]="false">
-      Cancelar
     </button>
   </div>
 </div>

@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{ alerta.tituloDialog }}</h1>
+<div mat-dialog-content>
+  <p>
+    {{ alerta.descricao }} <b>{{ alerta.tituloTarefa }}</b> ?
+  </p>
+</div>
+<div mat-dialog-actions class="centralizar">
+  <button
+    class="btn"
+    color="warn"
+    mat-raised-button
+    [mat-dialog-close]="false"
+    *ngIf="alerta.possuirBtnFechar"
+  >
+    {{ alerta.btnCancelar }}
+  </button>
+  <button
+    class="btn colorButtonConfirm"
+    mat-raised-button
+    cdkFocusInitial
+    [mat-dialog-close]="true"
+  >
+    {{ alerta.btnSucesso }}
+  </button>
+</div>

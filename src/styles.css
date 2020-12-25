@@ -17,6 +17,15 @@ body {
   color: green;
 }
 
+.black {
+  color: black;
+}
+
+.colorButtonConfirm {
+  background-color: green;
+  color: white;
+}
+
 .styleDivMain {
   display: flex;
   justify-content: center;

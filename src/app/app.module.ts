@@ -9,9 +9,10 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app.routing.module";
+import { AlertaComponent } from "./shared/components/alerta/alerta.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AlertaComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
@@ -21,7 +22,7 @@ import { AppRoutingModule } from "./app.routing.module";
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
-  entryComponents: [ModalComentarioComponent],
+  entryComponents: [ModalComentarioComponent, AlertaComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

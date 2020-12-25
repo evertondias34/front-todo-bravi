@@ -73,7 +73,7 @@
           <mat-card-actions class="centralizar">
             <button
               mat-icon-button
-              color="warn"
+              color="primary"
               class="btn"
               disabled="{{ !tarefa.isAtivo }}"
               (click)="adicionarComentario(tarefa)"
@@ -84,10 +84,10 @@
             </button>
 
             <button
-              disabled="{{ !tarefa.isAtivo }}"
+              [disabled]="!tarefa.isAtivo"
               mat-icon-button
               class="btn green"
-              (click)="concluirTarefa(tarefa)"
+              (click)="confirmacao(tarefa, 'Concluir')"
               #tooltip="matTooltip"
               matTooltip="Concluir tarefa"
             >
@@ -96,8 +96,7 @@
 
             <button
               mat-icon-button
-              color="primary"
-              class="btn"
+              class="btn black"
               (click)="editarTarefa(tarefa.id)"
               #tooltip="matTooltip"
               matTooltip="Editar tarefa"
@@ -109,7 +108,7 @@
               mat-icon-button
               color="warn"
               class="btn"
-              (click)="deletarTarefa(tarefa.id)"
+              (click)="confirmacao(tarefa, 'Deletar')"
               #tooltip="matTooltip"
               matTooltip="Deletar tarefa"
             >
